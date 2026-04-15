@@ -1,22 +1,24 @@
-# ProgettoNataleFlask
-## CineList
-CineList è una web app realizzata con Flask.
-Gli utenti possono registrarsi e visualizzare i film visti o meno dalla coomunity.
+# Progetto Sito Web Lego
+## Descrizione del Progetto
+Questo progetto riguarda la creazione di un sito web dedicato al mondo dei Lego. Il sito presenterà una vasta gamma di prodotti Lego, insieme alle sue storie interessanti.
 
-### Funzionalità
-- Registrazione e login utenti
-- Creazione di film
-- Lista di film visti e no
-- Dashboard con i film visti e non visti
+### Immagini dei Prodotti
+Le immagini dei prodotti verranno presentate in gallerie, rendendo facile per i visitatori esplorare le diverse collezioni disponibile.
+
+### Breve Storia dei Lego
+I Lego sono stati inventati nel 1932 in Danimarca e hanno assunto una popolarità mondiale. Oggi rappresentano un hobby per le persone di tutte le età.
+
+### Contenuti Aggiuntivi
+Il sito includerà anche articoli e video che mostrano come costruire diversi modelli Lego.
 
 ### Struttura del progetto
-ProgettoNataleFlask
-| CineList
+ProgettoSitoWebLego
+| Progetto Lego
 ├── run.py
 |── setup_db.py
 |── app
 │────── repositories
-│──────────── film_repository.py
+│──────────── lego_repository.py
 │──────────── user_repository.py
 │────── templates
 │──────────── auth
@@ -24,7 +26,7 @@ ProgettoNataleFlask
 │────────────────── register.html
 │──────────── about.html
 │──────────── base.html
-│──────────── creafilm.html
+│──────────── crealego.html
 │──────────── index.html
 │────── __init__.py
 │────── auth.py
@@ -32,6 +34,6 @@ ProgettoNataleFlask
 │────── main.py
 │────── schema.sql
 |── instance
-│────── film.sqlite
+│────── lego.sqlite
 
--  link per aprire il Browser --> http://127.0.0.1:5000/
+-  link per aprire il Browser --> http://127.0.0.1:5000/ 

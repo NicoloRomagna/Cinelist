@@ -1,32 +1,16 @@
-# Importiamo la nostra funzione per prendere la connessione
 from app.db import get_db
 
-def create_user(username, password_hash):
-    """Inserisce un nuovo utente."""
+def create_user(username, password):
     db = get_db()
-    try:
-        db.execute(
-            "INSERT INTO user (username, password) VALUES (?, ?)",
-            (username, password_hash),
-        )
-        db.commit() # Salviamo le modifiche
-        return True
-    except db.IntegrityError:
-        # Errore: lo username esiste già
-        return False
-    
-def get_user_by_username(username):
-    """Cerca un utente per nome."""
-    db = get_db()
-    user = db.execute(
-        "SELECT * FROM user WHERE username = ?", (username,)
-    ).fetchone()
-    return user
+    db.execute(
+        "INSERT INTO user (username, password) VALUES (?, ?)",
+        (username, password)
+    )
+    db.commit()
 
-def get_user_by_id(user_id):
-    """Cerca un utente per ID."""
+def get_user(username):
     db = get_db()
-    user = db.execute(
-        "SELECT * FROM user WHERE id = ?", (user_id,)
+    return db.execute(
+        "SELECT * FROM user WHERE username = ?",
+        (username,)
     ).fetchone()
-    return user

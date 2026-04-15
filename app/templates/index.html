@@ -1,25 +1,16 @@
-<!-- app/templates/index.html -->
 {% extends 'base.html' %}
 
-{% block title %}Home - Blog{% endblock %}
-
 {% block content %}
-    <h2>Benvenuti!</h2>
-    <p>Questo è il sito ufficiale del mio archivio di Film</p>
-    
-    <h3>Film Visti:</h3>
-    <ul>
-        <!-- Ciclo sull'array film_visti che mi arriva da main.py  -->
-    {% for film in filmv %}
-        <li>{{ film }}</li>
-    {% endfor %}
-    </ul>
+<h2>Collezione Lego</h2>
 
-    <h3>Film Da vedere:</h3>
-    <ul>
-    <!-- Ciclo sull'array film_da_vedere che mi arriva da main.py  -->
-    {% for film in filmdavedere %}
-        <li>{{ film }}</li>
-    {% endfor %}
-    </ul>
+{% for lego in legos %}
+    <div>
+        <h3>{{ lego['name'] }}</h3>
+        <p>{{ lego['description'] }}</p>
+        {% if lego['image'] %}
+            <img src="{{ lego['image'] }}" width="200">
+        {% endif %}
+    </div>
+{% endfor %}
+
 {% endblock %}
